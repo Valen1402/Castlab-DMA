@@ -1,0 +1,55 @@
+[FPGA_TEMPLATE 사용법]
+1. 압축 해제
+2. 01_RTL 에 본인이 작성한 합성 가능한 모든 RTL 추가
+3. 03_LIST의 vlist.f 에 위의 RTL file list 추가
+4. command 창에 ./start_vivado.sh 실행
+
+** SRAM을 Xilinx IP로 사용하는 경우, vivado project가 생성되면 IP Catalog에서 BRAM 생성하면 됨
+
+[필요 데이터]
+Expected Data : 0x00005f5e5d5c5b5a595857
+
+[서버안내]
+IP : 143.248.142.187
+ID : freshman
+PW : 0000
+/home/members/freshman/Workplace/Freshman-Curriculum 내 개인 폴더에 bitstream 파일 옮겨서 사용
+
+[How to use FPGA_TEMPLATE]
+1. Uncompression
+2. 01_ Add all RTLs that can be synthesized by yourself to the RTL
+3. Add above RTL file list to vlist.f of 03_LIST
+4. Run ./start_vivado.sh in the command window
+
+** If you use SRAM as an Xilinx IP, you can create a BRAM in the IP Catalog when the vivado project is created
+
+[Required data]
+Expected Data : 0x00005f5e5d5c5b5a595857
+
+[Server guide]
+IP : 143.248.142.187
+ID : freshman
+PW : 0000
+/home/members/freshman/Workplace/Freshman-Curriculum Move the bitstream file to my personal folder and use it
+
+
+Commands used for Lab 2
+
+cd ./Workplace/XilinxAR65444/Linux/Xilinx_Answer_65444_Linux_Files/tests
+sudo make clean
+cd /home/members/freshman/Workplace/XilinxAR65444/Linux
+sudo ./build-install-driver-linux.sh
+
+sudo reboot
+
+cd ./Workplace/XilinxAR65444/Linux/Xilinx_Answer_65444_Linux_Files/tests
+sudo ./load_driver.sh
+
+./reg_rw /dev/xdma0_user 0x00000000 w 0x00100007
+./reg_rw /dev/xdma0_user 0x00000004 w 0x00200002
+./reg_rw /dev/xdma0_user 0x00000008 w 0x0000000b
+./reg_rw /dev/xdma0_user 0x0000000c w 0x00000000
+./reg_rw /dev/xdma0_user 0x0000000c w 0x00000001
+
+./reg_rw /dev/xdma0_user 0x0000000c w 0x00000002
+
