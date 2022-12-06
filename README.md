@@ -1,3 +1,3 @@
 # Castlab-DMA
 This project implement a Direct Memory Access unit on Xilinix FPGA VCU118
-Please refer to the .pdf file for more description
+Please refer to the Lab2.pdf file for more description
